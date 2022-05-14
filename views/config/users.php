@@ -39,8 +39,18 @@
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            console.log("Hola")
+            $.ajax({
+                url:'frontController',
+                type: 'POST',
+                data: {
+                    class: 'rooms',
+                    metode: 'ocuped'
+                },
+                success: function(res){
+                    console.log(res)
+                }
+            })
         })
     </script>
 </body>
-</html>
+</html> 
